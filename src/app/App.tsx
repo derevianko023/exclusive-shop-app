@@ -52,7 +52,6 @@ const App = () => {
       <Input
         placeholder="Confirm New Passwod"
         borderStyle="none"
-        backgroundColor="gray"
         onChange={handleInputChange}
         inputType="text"
         inputWrapperHeight="l"
@@ -68,6 +67,13 @@ const App = () => {
       />
 
       <Input
+        borderStyle="none"
+        onChange={handleInputChange}
+        inputType="text"
+        inputWrapperHeight="l"
+      />
+
+      <Input
         placeholder="Email or Phone Number"
         borderStyle="bottom"
         backgroundColor="none"
@@ -77,32 +83,23 @@ const App = () => {
       />
 
       <Input
-        borderStyle="none"
-        backgroundColor="gray"
-        onChange={handleInputChange}
-        inputType="text"
-        inputWrapperHeight="l"
-      />
-
-      <Input
-        icon={<SearchIcon />}
-        placeholder="What are you looking for?"
-        borderStyle="none"
-        backgroundColor="gray"
-        onChange={handleInputChange}
-        inputType="text"
-        inputWrapperHeight="s"
-      />
-
-      <Input
         icon={<SendIcon />}
         placeholder="Enter your email"
         borderStyle="all"
         borderColor="white"
         backgroundColor="none"
         onChange={handleInputChange}
-        inputType="text"
+        inputType="email"
         inputWrapperHeight="m"
+      />
+
+      <Input
+        icon={<SearchIcon />}
+        placeholder="What are you looking for?"
+        borderStyle="none"
+        onChange={handleInputChange}
+        inputType="text"
+        inputWrapperHeight="s"
       />
 
       <NumberInput onChange={handleNumberInputChange} />

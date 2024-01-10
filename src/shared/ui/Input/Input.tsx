@@ -1,5 +1,5 @@
 // react
-import { ReactNode, FC, CSSProperties } from "react";
+import { ReactNode, FC } from "react";
 // libs
 import classnames from "classnames";
 // styles
@@ -38,14 +38,13 @@ export const Input: FC<InputProps> = ({
     [styles.blackBorderColor]: borderColor === "black",
     [styles.grayBorderColor]: borderColor === "gray",
     [styles.whiteBorderColor]: borderColor === "white",
+    [styles.noneBackgroundColor]: backgroundColor === "none",
+    [styles.grayBackgroundColor]: backgroundColor === "gray",
 
   });
-  const divStyle: CSSProperties = {
-    backgroundColor: backgroundColor === "gray" ? "#f5f5f5" : "transparent",
-  };
 
   return (
-    <div className={divClasses} style={divStyle}>
+    <div className={divClasses}>
       <input
         placeholder={placeholder}
         className={styles.Input}

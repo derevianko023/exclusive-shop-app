@@ -76,3 +76,9 @@
 .whiteBorderColor {
   border-color: $whiteColor;
 }
+.noneBackgroundColor {
+  background-color: transparent;
+}
+.grayBackgroundColor {
+  background-color: $inputBgColor;
+}
