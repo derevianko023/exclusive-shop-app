@@ -1,9 +1,9 @@
 @import "@/app/styles/variables.scss";
+
 .Button {
   cursor: pointer;
-  height: 28px;
-  padding: 0px 24px;
-  border-radius: 2px;
+  padding: 0px 48px;
+  border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,14 @@
   font-family: $primaryFontFamily;
   font-size: $primaryFontSize;
   font-weight: 500;
+  gap: 8px;
+}
+.Icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .roseBG {
   background-color: $secondaryColor;
@@ -18,8 +26,23 @@
 .greenBG {
   background-color: $greenColor;
 }
+.blackBG {
+  background-color: $primaryColor;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+}
 .noneBG {
   background-color: transparent;
-  border: 1px solid $borderInputColor;
+  border: 2px solid $borderInputColor;
   color: $primaryTextColor;
+  gap: 16px;
+}
+.small {
+  height: 41px;
+}
+.medium {
+  height: 44px;
+}
+.large {
+  height: 56px;
 }

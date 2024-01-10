@@ -2,14 +2,16 @@
 import styles from "./App.module.scss";
 // assets
 import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
-import searchIcon from "@/shared/libs/assets/icon-search.png";
-import sendIcon from "@/shared/libs/assets/icon-send.png";
+import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
+import CartIcon from "@/shared/libs/assets/svg/cartIcon.svg?react";
+import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
 // ui
 import { Button } from "@/shared/ui/Button";
 import { Input } from "@/shared/ui/Input";
 import { NumberInput } from "@/shared/ui/NumberInput";
 
 const App = () => {
+
   const handleClick = () => {
     console.log("Button clicked!");
   };
@@ -23,16 +25,28 @@ const App = () => {
 
   return (
     <div className={styles.App}>
-      <Button onClick={handleClick} disabled={false} backgroundColor="rose">
+      <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
         View All Products
       </Button>
 
-      <Button onClick={handleClick} disabled={false} backgroundColor="green">
-        View All
+      <Button onClick={handleClick} disabled={false} backgroundColor="green" size="large">
+        Buy Now!
       </Button>
 
-      <Button onClick={handleClick} disabled={false} backgroundColor="none">
+      <Button onClick={handleClick} disabled={false} backgroundColor="none" size="large">
         Update Cart
+      </Button>
+
+      <Button onClick={handleClick} disabled={false} backgroundColor="black" size="small" icon={<CartIcon />}>
+        Add To Cart
+      </Button>
+
+      <Button onClick={handleClick} disabled={false} backgroundColor="none" size="large" icon={<GoogleIcon />}>
+        Sign up with Google
+      </Button>
+
+      <Button onClick={handleClick} disabled={false} backgroundColor="black" size="small">
+        Add To Cart
       </Button>
 
       <Input
@@ -41,8 +55,7 @@ const App = () => {
         backgroundColor="gray"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="165px"
-        inputWrapperHeight="19px"
+        inputWrapperHeight="l"
       />
 
       <Input
@@ -51,8 +64,7 @@ const App = () => {
         backgroundColor="none"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="150px"
-        inputWrapperHeight="25px"
+        inputWrapperHeight="xl"
       />
 
       <Input
@@ -61,8 +73,7 @@ const App = () => {
         backgroundColor="none"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="165px"
-        inputWrapperHeight="20px"
+        inputWrapperHeight="xs"
       />
 
       <Input
@@ -70,8 +81,7 @@ const App = () => {
         backgroundColor="gray"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="122px"
-        inputWrapperHeight="20px"
+        inputWrapperHeight="l"
       />
 
       <Input
@@ -81,20 +91,18 @@ const App = () => {
         backgroundColor="gray"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="130px"
-        inputWrapperHeight="19px"
+        inputWrapperHeight="s"
       />
 
       <Input
-        icon={<img src={sendIcon} alt="Send Icon" />}
+        icon={<SendIcon />}
         placeholder="Enter your email"
         borderStyle="all"
-        borderColor="#ffffff"
+        borderColor="white"
         backgroundColor="none"
         onChange={handleInputChange}
         inputType="text"
-        inputWrapperWidth="130px"
-        inputWrapperHeight="25px"
+        inputWrapperHeight="m"
       />
 
       <NumberInput onChange={handleNumberInputChange} />

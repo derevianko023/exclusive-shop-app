@@ -9,34 +9,38 @@ interface InputProps {
   icon?: ReactNode;
   placeholder?: string;
   borderStyle: "bottom" | "all" | "none";
-  borderColor?: string;
+  borderColor?: "black" | "gray" | "white";
   backgroundColor?: "none" | "gray";
   onChange: () => void;
   inputType: string;
-  inputWrapperWidth?: string;
-  inputWrapperHeight?: string;
+  inputWrapperHeight?: "xs" | "s" | "m" | "l" | "xl";
 }
 
 export const Input: FC<InputProps> = ({
   icon,
   placeholder,
   borderStyle = "all",
-  borderColor = "#999999",
-  backgroundColor,
+  borderColor = "gray",
+  backgroundColor = "gray",
   onChange,
   inputType,
-  inputWrapperWidth,
   inputWrapperHeight,
 }) => {
   const divClasses = classnames(styles.InputWrapper, {
-    [styles.BorderBottom]: borderStyle === "bottom",
-    [styles.BorderAll]: borderStyle === "all",
-    [styles.NoBorder]: borderStyle === "none",
+    [styles.borderBottom]: borderStyle === "bottom",
+    [styles.borderAll]: borderStyle === "all",
+    [styles.noBorder]: borderStyle === "none",
+    [styles.xsInputHeight]: inputWrapperHeight === "xs",
+    [styles.sInputHightInput]: inputWrapperHeight === "s",
+    [styles.mInputHeight]: inputWrapperHeight === "m",
+    [styles.lInputHeight]: inputWrapperHeight === "l",
+    [styles.xlInputHeight]: inputWrapperHeight === "xl",
+    [styles.blackBorderColor]: borderColor === "black",
+    [styles.grayBorderColor]: borderColor === "gray",
+    [styles.whiteBorderColor]: borderColor === "white",
+
   });
   const divStyle: CSSProperties = {
-    width: inputWrapperWidth, // TODO remove width
-    height: inputWrapperHeight, // TODO change to props
-    borderColor: borderColor, // TODO change to props
     backgroundColor: backgroundColor === "gray" ? "#f5f5f5" : "transparent",
   };
 
