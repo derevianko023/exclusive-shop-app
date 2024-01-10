@@ -1,0 +1,53 @@
+@import "@/app/styles/variables.scss";
+
+.InputWrapper {
+  display: flex;
+  align-items: center;
+  border-radius: 2px;
+  border-width: 2px;
+  border-style: solid;
+  padding: 0 10px;
+}
+.Icon {
+  width: 10px;
+  height: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Icon img {
+  width: 100%;
+  height: 100%;
+}
+.Input {
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+  background-color: transparent;
+  color: $grayTextColor;
+  font-family: $primaryFontFamily;
+  font-size: 8px;
+}
+.Input::placeholder {
+  color: $grayTextColor;
+  font-family: $primaryFontFamily;
+  font-size: 6px;
+}
+.BorderBottom {
+  border: none;
+  border-bottom: 1px solid $borderInputColor;
+  border-radius: 0;
+}
+.BorderAll {
+  border: 1px solid $borderInputColor;
+  border-radius: 2px;
+}
+.NoBorder {
+  border: none;
+}
+.noneBgColor {
+  background-color: transparent;
+}
+.grayBgColor {
+  background-color: $inputBgColor;
+}

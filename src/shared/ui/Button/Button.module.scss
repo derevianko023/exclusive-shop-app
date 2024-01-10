@@ -1,0 +1,25 @@
+@import "@/app/styles/variables.scss";
+.Button {
+  cursor: pointer;
+  height: 28px;
+  padding: 0px 24px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $whiteTextColor;
+  font-family: $primaryFontFamily;
+  font-size: $primaryFontSize;
+  font-weight: 500;
+}
+.roseBG {
+  background-color: $secondaryColor;
+}
+.greenBG {
+  background-color: $greenColor;
+}
+.noneBG {
+  background-color: transparent;
+  border: 1px solid $borderInputColor;
+  color: $primaryTextColor;
+}
