@@ -1,31 +1,30 @@
 // styles
 import styles from "./App.module.scss";
 // assets
-import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
-import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
-import CartIcon from "@/shared/libs/assets/svg/cartIcon.svg?react";
-import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
+// import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
+// import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
+// import CartIcon from "@/shared/libs/assets/svg/cartIcon.svg?react";
+// import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
 // ui
-import { Button } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { NumberInput } from "@/shared/ui/NumberInput";
+// import { Button } from "@/shared/ui/Button";
+// import { Input } from "@/shared/ui/Input";
+import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
 
 const App = () => {
 
-  const handleClick = () => {
-    console.log("Button clicked!");
-  };
-  const handleInputChange = () => {
-    console.log("handleInputChange");
-  };
-
-  const handleNumberInputChange = () => {
-    console.log("handleNumberInputChange");
+  // const handleClick = () => {
+  //   console.log("Button clicked!");
+  // };
+  // const handleInputChange = () => {
+  //   console.log("handleInputChange");
+  // };
+  const handleInputChange = (value: number) => {
+    console.log('Введене значення:', value);
   };
 
   return (
     <div className={styles.App}>
-      <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
+      {/* <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
         View All Products
       </Button>
 
@@ -100,9 +99,9 @@ const App = () => {
         onChange={handleInputChange}
         inputType="text"
         inputWrapperHeight="s"
-      />
+      /> */}
 
-      <NumberInput onChange={handleNumberInputChange} />
+      <CustomNumberInput onChange={handleInputChange} />
     </div>
   );
 };

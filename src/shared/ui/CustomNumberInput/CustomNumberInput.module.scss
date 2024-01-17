@@ -1,0 +1,43 @@
+@import "@/app/styles/variables.scss";
+
+.NumberInputWrapper {
+  width: 72px;
+  height: 44px;
+  border: 2px solid $borderInputColor;
+  border-radius: 5px;
+  position: relative;
+  padding: 0 12px;
+  margin: 50px;
+}
+.ArrowUp,
+.ArrowDown {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  top: 5px;
+  left: 44px;
+  cursor: pointer;
+}
+.ArrowDown {
+  top: 21px;
+}
+.ArrowUp svg,
+.ArrowDown svg {
+  background: $whiteColor;
+}
+.NumberInputWrapper input {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0, -50%);
+  width: 30px;
+}
+input {
+  font-family: $primaryFontFamily;
+  font-size: $primaryFontSize;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: $primaryColor;
+}
