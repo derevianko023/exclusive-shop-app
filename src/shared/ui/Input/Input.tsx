@@ -1,5 +1,5 @@
 // react
-import { ReactNode, FC } from "react";
+import { ReactNode, FC, useState  } from "react";
 // libs
 import classnames from "classnames";
 // styles
@@ -11,7 +11,7 @@ interface InputProps {
   borderStyle: "bottom" | "all" | "none";
   borderColor?: "black" | "gray" | "white";
   backgroundColor?: "none" | "gray";
-  onChange: () => void;
+  onChange: (value: string) => void;
   inputType: string;
   inputWrapperHeight?: "xs" | "s" | "m" | "l" | "xl";
 }
@@ -26,6 +26,17 @@ export const Input: FC<InputProps> = ({
   inputType,
   inputWrapperHeight,
 }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setInputValue(value); 
+  };
+  const handleInputBlur = () => {
+    onChange(inputValue);
+  };
+
+
   const divClasses = classnames(styles.InputWrapper, {
     [styles.borderBottom]: borderStyle === "bottom",
     [styles.borderAll]: borderStyle === "all",
@@ -48,8 +59,10 @@ export const Input: FC<InputProps> = ({
       <input
         placeholder={placeholder}
         className={styles.Input}
-        onChange={onChange}
+        onChange={handleInputChange}
+        onBlur={handleInputBlur}
         type={inputType}
+        value={inputValue}
       />
       {icon && <div className={styles.Icon}>{icon}</div>}
     </div>
