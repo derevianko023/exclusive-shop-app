@@ -1,7 +1,7 @@
 // styles
 import styles from "./App.module.scss";
 //react
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // assets
 // import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
@@ -13,9 +13,16 @@ import { useState } from "react";
 import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
 import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
 import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
+import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
 
 const App = () => {
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState<string | undefined>("Bank");
+
+  useEffect(() => {
+    if (selectedOption === undefined) {
+      setSelectedOption("Bank");
+    }
+  }, [selectedOption]);
 
   // const handleClick = () => {
   //   console.log("Button clicked!");
@@ -24,12 +31,31 @@ const App = () => {
 
   //   console.log("handleInputChange");
   // };
-  const handleInputChange = (value: string) => {
+  const handleRadioInputChange = (value: string) => {
     setSelectedOption(value);
-    console.log(selectedOption);
+    console.log(value);
   };
+  const handleNumberInputChange = (value: number) => {
+    console.log(value);
+  };
+  const handleCheckboxChange =(checked: boolean)=> {
+    console.log(checked);
+  }
   return (
     <div className={styles.App}>
+
+      <CustomCategoryTitle title="Our Products" />
+      <CustomCategoryTitle title="Featured" />
+      <CustomCategoryTitle title="This Month" />
+
+
+      <CustomNumberInput onChange={handleNumberInputChange} />
+      <CustomCheckbox onChange={handleCheckboxChange} />
+
+      <div>
+        <CustomRadioInput onChange={handleRadioInputChange} value="Bank" checked={selectedOption === "Bank"} />
+        <CustomRadioInput onChange={handleRadioInputChange} value="Cash on delivery" checked={selectedOption === "Cash on delivery"} />
+      </div>
       {/* <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
         View All Products
       </Button>
@@ -106,14 +132,6 @@ const App = () => {
         inputType="text"
         inputWrapperHeight="s"
       /> */}
-
-      <CustomNumberInput />
-      <CustomCheckbox />
-
-      <div>
-        <CustomRadioInput onChange={handleInputChange} value="Bank" checked={selectedOption === "Bank"} />
-        <CustomRadioInput onChange={handleInputChange} value="Cash on delivery" checked={selectedOption === "Cash on delivery"} />
-      </div>
 
     </div>
 

@@ -1,0 +1,24 @@
+@import "@/app/styles/variables.scss";
+
+.TitleWrapper {
+    height: 40px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin: 20px;
+}
+.RoseBox {
+    width: 20px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: $secondaryColor;
+}
+.TitleText {
+    font-family: $primaryFontFamily;
+    color: $secondaryColor;
+    font-size: $primaryFontSize;
+    font-weight: 600;
+    line-height: 20px; 
+}

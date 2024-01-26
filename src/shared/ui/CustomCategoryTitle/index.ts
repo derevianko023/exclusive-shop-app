@@ -1,0 +1,1 @@
+export { CustomCategoryTitle } from "./CustomCategoryTitle";

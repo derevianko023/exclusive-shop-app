@@ -15,7 +15,7 @@ export const CustomCheckbox: FC<CustomCheckboxProps> = ({ onChange }) => {
     const handleCheckboxChange = () => {
         const newCheckedState = !isChecked;
         setIsChecked(newCheckedState);
-        console.log(isChecked)
+        console.log(newCheckedState)
 
         if (onChange) {
             onChange(newCheckedState);

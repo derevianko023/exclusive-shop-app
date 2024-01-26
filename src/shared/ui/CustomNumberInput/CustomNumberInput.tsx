@@ -48,7 +48,9 @@ export const CustomNumberInput: FC<CustomNumberInputProps> = ({ onChange }) => {
       } else {
         setValue(inputVal);
       }
+      if (onChange) onChange(inputVal);
     }
+    console.log(inputVal)
   };
 
   return (
