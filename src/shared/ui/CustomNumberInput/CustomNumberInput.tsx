@@ -10,30 +10,44 @@ interface CustomNumberInputProps {
   onChange?: (value: number) => void;
 }
 
-
 export const CustomNumberInput: FC<CustomNumberInputProps> = ({ onChange }) => {
   const [value, setValue] = useState(1);
 
-  const customValue = value.toString().padStart(2, '0');//метод додає спереду нуль, щоб довжина  строки була 2
+  const customValue = value.toString().padStart(2, "0"); //метод додає спереду нуль, щоб довжина  строки була 2
+
+  //методи  increment і decrement так пропонує написати ChatGPT, я  його не розумію
 
   const increment = () => {
     if (value < 99999) {
-      setValue((prevValue) => prevValue + 1);
+      const newValue = value + 1;
+      setValue(newValue);
+      const fakeEvent = {
+        target: { value: newValue.toString() },
+      } as React.ChangeEvent<HTMLInputElement>;
+      handleInputChange(fakeEvent);
     }
   };
 
   const decrement = () => {
     if (value > 1) {
-      setValue((prevValue) => prevValue - 1);
+      const newValue = value - 1;
+      setValue(newValue);
+      const fakeEvent = {
+        target: { value: newValue.toString() },
+      } as React.ChangeEvent<HTMLInputElement>;
+      handleInputChange(fakeEvent);
     }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const inputVal = parseInt(e.target.value, 10);
-    setValue(isNaN(inputVal) ? 1 : Math.min(Math.max(inputVal, 1), 99999));
-    if(onChange) {
-      onChange(isNaN(inputVal) ? 1 : Math.min(Math.max(inputVal, 1), 99999));
-      console.log('Отримане значення у handleInputChange:', isNaN(inputVal) ? 1 : Math.min(Math.max(inputVal, 1), 99999));
+    const inputVal = parseInt(e.target.value);
+
+    if (typeof inputVal === "number") {
+      if (inputVal > 99999) {
+        setValue(99999);
+      } else {
+        setValue(inputVal);
+      }
     }
   };
 
@@ -43,7 +57,7 @@ export const CustomNumberInput: FC<CustomNumberInputProps> = ({ onChange }) => {
         <ArrowUp />
       </button>
       <input
-        name="Number Input"
+        name="numberInput"
         type="text"
         value={customValue}
         onChange={handleInputChange}
@@ -52,6 +66,5 @@ export const CustomNumberInput: FC<CustomNumberInputProps> = ({ onChange }) => {
         <ArrowDown />
       </button>
     </div>
-  )
-}
-
+  );
+};

@@ -1,0 +1,32 @@
+@import "@/app/styles/variables.scss";
+
+.CustomCheckboxWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.HiddenCheckbox {
+  position: absolute;
+  opacity: 0;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.CheckboxVisual {
+  width: 24px;
+  height: 24px;
+  border: 2px solid $secondaryColor;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $whiteColor;
+  margin: 0;
+}
+.Checked .CheckboxVisual {
+  background-color: $secondaryColor;
+}
+

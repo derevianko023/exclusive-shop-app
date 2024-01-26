@@ -1,5 +1,7 @@
 // styles
 import styles from "./App.module.scss";
+//react
+import { useState } from "react";
 // assets
 // import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
@@ -9,19 +11,23 @@ import styles from "./App.module.scss";
 // import { Button } from "@/shared/ui/Button";
 // import { Input } from "@/shared/ui/Input";
 import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
+import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
+import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
 
 const App = () => {
+  const [selectedOption, setSelectedOption] = useState("");
 
   // const handleClick = () => {
   //   console.log("Button clicked!");
   // };
   // const handleInputChange = () => {
+
   //   console.log("handleInputChange");
   // };
-  const handleInputChange = (value: number) => {
-    console.log('Введене значення:', value);
+  const handleInputChange = (value: string) => {
+    setSelectedOption(value);
+    console.log(selectedOption);
   };
-
   return (
     <div className={styles.App}>
       {/* <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
@@ -101,8 +107,16 @@ const App = () => {
         inputWrapperHeight="s"
       /> */}
 
-      <CustomNumberInput onChange={handleInputChange} />
+      <CustomNumberInput />
+      <CustomCheckbox />
+
+      <div>
+        <CustomRadioInput onChange={handleInputChange} value="Bank" checked={selectedOption === "Bank"} />
+        <CustomRadioInput onChange={handleInputChange} value="Cash on delivery" checked={selectedOption === "Cash on delivery"} />
+      </div>
+
     </div>
+
   );
 };
 

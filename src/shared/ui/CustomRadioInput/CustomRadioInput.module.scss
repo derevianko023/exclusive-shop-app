@@ -1,0 +1,57 @@
+@import "@/app/styles/variables.scss";
+
+.RadioInput[type="radio"] {
+  appearance: none;
+  border: 2px solid $primaryColor;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  margin: 0;
+}
+.RadioInput.blackBorder[type="radio"] {
+  border: 2px solid $primaryColor;
+}
+.RadioInput.roseBorder[type="radio"] {
+  border: 2px solid $secondaryColor;
+}
+.RadioInput[type="radio"]:checked {
+  border-color: $primaryColor;
+}
+.RadioInput.blackBorder[type="radio"]:checked {
+  border: 2px solid $primaryColor;
+}
+.RadioInput.roseBorder[type="radio"]:checked {
+  border: 2px solid $secondaryColor;
+}
+.RadioInput[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: $primaryColor;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.RadioInput.blackCircle[type="radio"]:checked::before {
+  background-color: $primaryColor;
+}
+.RadioInput.roseCircle[type="radio"]:checked::before {
+  background-color: $secondaryColor;
+}
+.RadioText {
+    font-family: $primaryFontFamily;
+    color: $primaryColor;
+    font-size: $primaryFontSize;
+    font-weight: 400;
+    line-height: 16px;
+    margin-left: 16px;
+}
+label {
+    display: flex;
+    align-items: center;
+}
