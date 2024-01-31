@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "src": "https://source.unsplash.com/894x344/?sofa",
+    "alt": "Placeholder Image 1"
+  },
+  {
+    "id": 2,
+    "src": "https://source.unsplash.com/894x344/?technology",
+    "alt": "Placeholder Image 2"
+  },
+  {
+    "id": 3,
+    "src": "https://source.unsplash.com/894x344/?phone",
+    "alt": "Placeholder Image 3"
+  },
+  {
+    "id": 4,
+    "src": "https://source.unsplash.com/894x344/?iphone",
+    "alt": "Placeholder Image 4"
+  },
+  {
+    "id": 5,
+    "src": "https://source.unsplash.com/894x344/?watch",
+    "alt": "Placeholder Image 5"
+  },
+  {
+    "id": 6,
+    "src": "https://source.unsplash.com/894x344/?laptop",
+    "alt": "Placeholder Image 6"
+  },
+  {
+    "id": 7,
+    "src": "https://source.unsplash.com/894x344/?table",
+    "alt": "Placeholder Image 7"
+  }
+]

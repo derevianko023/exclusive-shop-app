@@ -14,6 +14,8 @@ import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
 import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
 import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
 import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
+import { Carousel } from "@/widgets/ui/Carousel";
+
 
 const App = () => {
 
@@ -47,7 +49,10 @@ const App = () => {
   };
   return (
     <div className={styles.App}>
-      <Input
+
+      <Carousel />
+
+      {/* <Input
         placeholder="Coupon Code"
         borderStyle="all"
         backgroundColor="none"
@@ -67,7 +72,7 @@ const App = () => {
       <div>
         <CustomRadioInput onChange={handleRadioInputChange} value="Bank" checked={selectedOption === "Bank"} />
         <CustomRadioInput onChange={handleRadioInputChange} value="Cash on delivery" checked={selectedOption === "Cash on delivery"} />
-      </div>
+      </div> */}
       {/* <Button onClick={handleClick} disabled={false} backgroundColor="rose" size="large">
         View All Products
       </Button>
