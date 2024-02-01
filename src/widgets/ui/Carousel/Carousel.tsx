@@ -1,5 +1,5 @@
 //react
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 //libs
 import { useSwipeable } from "react-swipeable";
 //styles
@@ -13,21 +13,32 @@ export const Carousel = () => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(Math.floor(images.length / 2));
 
+  useEffect(() => {
+    const timer = setInterval(goToNextImage, 3000);
+    console.log('cdcvfdgbhnj')
+    return () => clearInterval(timer)
+  }, [currentImageIndex])
+
   const goToPrevImage = () => {
     setCurrentImageIndex(prevIndex => prevIndex === 0 ? images.length - 1 : prevIndex - 1);
   }
+
   const goToNextImage = () => {
     setCurrentImageIndex(prevIndex => prevIndex === images.length - 1 ? 0 : prevIndex + 1);
   }
+
   const handleIndicatorClick = (index: number) => {
     setCurrentImageIndex(index);
   };
+
   const handlers = useSwipeable({
     onSwipedLeft: () => goToNextImage(),
-    onSwipedRight: () =>goToPrevImage(),
+    onSwipedRight: () => goToPrevImage(),
     swipeDuration: 3000,
     preventScrollOnSwipe: true,
   });
+
+  
 
   return (
     <div className={styles.CarouselWrapper} {...handlers}>
@@ -38,7 +49,7 @@ export const Carousel = () => {
         alt={image.alt}
         className={`${styles.image} ${index === currentImageIndex ? styles.currentImage : ''}`}
         style={{ display: index === currentImageIndex ? 'block' : 'none' }} />))}
-        
+
 
       < ArrowLeft className={`${styles.ArrowLeft} ${styles.Arrow}`} onClick={goToPrevImage} />
       < ArrowRight className={`${styles.ArrowRight} ${styles.Arrow}`} onClick={goToNextImage} />
