@@ -9,19 +9,23 @@ import { useState, useEffect } from "react";
 // import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
 // ui
 // import { Button } from "@/shared/ui/Button";
-import { Input } from "@/shared/ui/Input";
-import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
-import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
-import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
-import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
-import { Carousel } from "@/widgets/ui/Carousel";
+// import { Input } from "@/shared/ui/Input";
+// import { CustomNumberInput } from "@/shared/ui/CustomNumberInput";
+// import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
+// import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
+// import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
+import { Carousel } from "@/widgets/carousel/ui/Carousel";
+import { ProductList } from "@/enteties/product/ui/ProductList/ProductList";
+
+import images from "../widgets/carousel/ui/assets/images.json";
+import products from "../enteties/product/ui/ProductCard/products.json";
 
 
 const App = () => {
 
   const [selectedOption, setSelectedOption] = useState<string | undefined>("Bank");
 
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     if (selectedOption === undefined) {
@@ -32,25 +36,26 @@ const App = () => {
   // const handleClick = () => {
   //   console.log("Button clicked!");
   // };
-  const handleRadioInputChange = (value: string) => {
-    setSelectedOption(value);
-    console.log(value);
-  };
-  const handleNumberInputChange = (value: number) => {
-    console.log(value);
-  };
-  const handleCheckboxChange =(checked: boolean)=> {
-    console.log(checked);
-  }
-  const handleInputChange = (value: string) => {
-    setInputValue(value);
-    console.log(value)
-    console.log(inputValue)
-  };
+  // const handleRadioInputChange = (value: string) => {
+  //   setSelectedOption(value);
+  //   console.log(value);
+  // };
+  // const handleNumberInputChange = (value: number) => {
+  //   console.log(value);
+  // };
+  // const handleCheckboxChange =(checked: boolean)=> {
+  //   console.log(checked);
+  // }
+  // const handleInputChange = (value: string) => {
+  //   setInputValue(value);
+  //   console.log(value)
+  //   console.log(inputValue)
+  // };
   return (
     <div className={styles.App}>
 
-      <Carousel />
+      <Carousel images={images} />
+      <ProductList products={products}/>
 
       {/* <Input
         placeholder="Coupon Code"

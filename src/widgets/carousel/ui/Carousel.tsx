@@ -1,15 +1,19 @@
 //react
-import { useState, useEffect } from 'react';
+import { useState, useEffect, FC } from 'react';
 //libs
 import { useSwipeable } from "react-swipeable";
 //styles
 import styles from './Carousel.module.scss';
 // assets
-import ArrowLeft from "@/widgets/libs/assets/arrow-left.svg?react";
-import ArrowRight from "@/widgets/libs/assets/arrow-right.svg?react";
-import images from "../../api/images.json";
+import ArrowLeft from "@/widgets/carousel/ui/assets/arrow-left.svg?react";
+import ArrowRight from "@/widgets/carousel/ui/assets/arrow-right.svg?react";
 
-export const Carousel = () => {
+
+interface CarouselProps {
+  images: { id: number; src: string; alt: string; }[];
+}
+
+export const Carousel: FC<CarouselProps> = ({images}) => {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(Math.floor(images.length / 2));
 
