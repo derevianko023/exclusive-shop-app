@@ -1,0 +1,59 @@
+[
+    {
+      "id": 1,
+      "name":"HAVIT HV-G92 Gamepad",
+      "image": "https://source.unsplash.com/270x250/?Gamepad",
+      "price": 200,
+      "wishlist": false
+    },
+    {
+      "id": 2,
+      "name":"AK-900 Wired Keyboard",
+      "image": "https://source.unsplash.com/270x250/?Keyboard",
+      "price": 255,
+      "wishlist": false
+    },
+    {
+      "id": 3,
+      "name":"Gucci duffle bag",
+      "image": "https://source.unsplash.com/270x250/?bag",
+      "price": 362,
+      "wishlist": false
+    },
+    {
+      "id": 4,
+      "name":"iPhone 15+ Pro",
+      "image": "https://source.unsplash.com/270x250/?iphone",
+      "price": 1200,
+      "wishlist": false
+    },
+    {
+      "id": 5,
+      "name":"AK-900 Wired Keyboard",
+      "image": "https://source.unsplash.com/270x250/?keyboard",
+      "price": 159,
+      "wishlist": false
+    },
+    {
+      "id": 6,
+      "name":"IPS LCD Gaming Monitor",
+      "image": "https://source.unsplash.com/270x250/?Monitor",
+      "price": 112,
+      "wishlist": false
+    },
+    {
+      "id": 7,
+      "name":"S-Series Comfort Chair ",
+      "image": "https://source.unsplash.com/270x250/?Chair",
+      "price": 79,
+      "wishlist": false
+    },
+    {
+      "id": 8,
+      "name":"iPhone 15+ Pro Max",
+      "image": "https://source.unsplash.com/270x250/?iPhone",
+      "price": 1800,
+      "wishlist": false
+    }
+  ]
+  

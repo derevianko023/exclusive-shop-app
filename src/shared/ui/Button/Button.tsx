@@ -7,11 +7,11 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   icon?: ReactNode;
-  onClick?: () => void;
+  onClick: () => void;
   children: ReactNode;
-  disabled?: boolean;
+  disabled: boolean;
   backgroundColor: "rose" | "green" | "black" | "none";
-  size?: "small" | "medium" | "large";
+  size: "small" | "medium" | "large";
 }
 
 export const Button: FC<ButtonProps> = ({
@@ -20,7 +20,7 @@ export const Button: FC<ButtonProps> = ({
   onClick,
   disabled,
   backgroundColor,
-  size
+  size,
 }) => {
   return (
     <button

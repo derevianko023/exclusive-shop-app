@@ -16,14 +16,53 @@ import { useState, useEffect } from "react";
 // import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
 import { Carousel } from "@/widgets/carousel/ui/Carousel";
 import { ProductList } from "@/enteties/product/ui/ProductList/ProductList";
+import { Menu } from "@/pages/home/ui/Menu/Menu";
 
-import images from "../widgets/carousel/ui/assets/images.json";
-import products from "../enteties/product/ui/ProductCard/products.json";
+import images from "@/widgets/carousel/libs/assets/images.json";
+import products from "@/enteties/product/ui/ProductList/products.json";
 
+// interface Category {
+//   name: string;
+//   subcategories?: string[];
+// }
+
+
+const categories = [
+  {
+    name: "Woman's Fashion",
+    subcategories: ["Shoes", "Dresses", "Accessories"]
+  },
+  {
+    name: "Men's Fashion",
+    subcategories: ["Shoes", "Jeans", "Coat"]
+  },
+  {
+    name: "Electronics"
+  },
+  {
+    name: "Home & Lifestyle"
+  },
+  {
+    name: "Medicine"
+  },
+  {
+    name: "Sports & Outdoor"
+  },
+  {
+    name: "Baby's & Toys"
+  },
+  {
+    name: "Groceries & Pets"
+  },
+  {
+    name: "Health & Beauty"
+  }
+];
 
 const App = () => {
-
-  const [selectedOption, setSelectedOption] = useState<string | undefined>("Bank");
+  const [selectedOption, setSelectedOption] = useState<string | undefined>(
+    "Bank"
+  );
 
   // const [inputValue, setInputValue] = useState("");
 
@@ -53,9 +92,9 @@ const App = () => {
   // };
   return (
     <div className={styles.App}>
-
       <Carousel images={images} />
-      <ProductList products={products}/>
+      <ProductList products={products} />
+      <Menu categories={categories} />
 
       {/* <Input
         placeholder="Coupon Code"
@@ -118,6 +157,7 @@ const App = () => {
         inputType="text"
         inputWrapperHeight="xl"
       />
+      
 
       <Input
         borderStyle="none"
@@ -154,9 +194,7 @@ const App = () => {
         inputType="text"
         inputWrapperHeight="s"
       /> */}
-
     </div>
-
   );
 };
 
