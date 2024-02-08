@@ -14,49 +14,49 @@ import { useState, useEffect } from "react";
 // import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
 // import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
 // import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
-import { Carousel } from "@/widgets/carousel/ui/Carousel";
 import { ProductList } from "@/enteties/product/ui/ProductList/ProductList";
-import { Menu } from "@/pages/home/ui/Menu/Menu";
 
 import images from "@/widgets/carousel/libs/assets/images.json";
 import products from "@/enteties/product/ui/ProductList/products.json";
+
+import { Carousel } from "@/widgets/carousel";
+import { Menu } from "@/pages/home";
 
 // interface Category {
 //   name: string;
 //   subcategories?: string[];
 // }
 
-
 const categories = [
   {
     name: "Woman's Fashion",
-    subcategories: ["Shoes", "Dresses", "Accessories"]
+    subcategories: ["Shoes", "Dresses", "Accessories"],
   },
   {
     name: "Men's Fashion",
-    subcategories: ["Shoes", "Jeans", "Coat"]
+    subcategories: ["Shoes", "Men's Accessories", "Coat"],
   },
   {
-    name: "Electronics"
+    name: "Electronics",
   },
   {
-    name: "Home & Lifestyle"
+    name: "Home & Lifestyle",
   },
   {
-    name: "Medicine"
+    name: "Medicine",
   },
   {
-    name: "Sports & Outdoor"
+    name: "Sports & Outdoor",
   },
   {
-    name: "Baby's & Toys"
+    name: "Baby's & Toys",
   },
   {
-    name: "Groceries & Pets"
+    name: "Groceries & Pets",
   },
   {
-    name: "Health & Beauty"
-  }
+    name: "Health & Beauty",
+  },
 ];
 
 const App = () => {
@@ -93,8 +93,12 @@ const App = () => {
   return (
     <div className={styles.App}>
       <Carousel images={images} />
-      <ProductList products={products} />
+      <ProductList data={products} />
       <Menu categories={categories} />
+
+      {/* <Button disabled={false} backgroundColor="green" size="large">
+        Buy Now!
+      </Button> */}
 
       {/* <Input
         placeholder="Coupon Code"
@@ -121,9 +125,6 @@ const App = () => {
         View All Products
       </Button>
 
-      <Button onClick={handleClick} disabled={false} backgroundColor="green" size="large">
-        Buy Now!
-      </Button>
 
       <Button onClick={handleClick} disabled={false} backgroundColor="none" size="large">
         Update Cart

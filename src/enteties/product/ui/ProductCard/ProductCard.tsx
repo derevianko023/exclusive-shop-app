@@ -28,11 +28,11 @@ export const ProductCard: FC<ProductCardProps> = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleOnMouseEnter = () => {
-    setIsHovered(true)
-  }
+    setIsHovered(true);
+  };
   const handleOnMouseLeave = () => {
-    setIsHovered(false)
-  }
+    setIsHovered(false);
+  };
 
   const toggleIsFavorite = () => {
     onHeartIconClick(id);
@@ -73,9 +73,7 @@ export const ProductCard: FC<ProductCardProps> = ({
           </div>
         ) : (
           <div className={styles.IconWrapper}>
-            <HeartIcon 
-              className={styles.Icon}
-              onClick={toggleIsFavorite} />
+            <HeartIcon className={styles.Icon} onClick={toggleIsFavorite} />
           </div>
         )}
         <p className={styles.ProductName}>{name}</p>

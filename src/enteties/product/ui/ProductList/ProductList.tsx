@@ -4,7 +4,6 @@ import { FC, useState } from "react";
 import styles from "./ProductList.module.scss";
 //enteties
 import { ProductCard } from "../ProductCard/ProductCard";
-import productsList from "./products.json";
 
 interface Product {
   id: number;
@@ -15,10 +14,10 @@ interface Product {
 }
 
 interface ProductListProps {
-  products: Product[];
+  data: Product[];
 }
-export const ProductList: FC<ProductListProps> = ({}) => {
-  const [products, setProducts] = useState(productsList);
+export const ProductList: FC<ProductListProps> = ({ data }) => {
+  const [products, setProducts] = useState(data);
 
   const handleHeartIconClick = (productId: number) => {
     setProducts((prevProducts) => {

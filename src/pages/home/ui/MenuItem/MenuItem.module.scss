@@ -1,12 +1,15 @@
 @import "@/app/styles/variables.scss";
 
 .MenuItemWrapper {
-  width: 100%;
+  width: 217px;
   position: relative;
 }
 .MenuItemWrapper:not(:last-child) {
   margin-bottom: 15px;
   margin-top: 10px;
+}
+.MenuItemWrapper.hovered {
+  background-color: #d9d9d9;
 }
 
 .MenuItem {
@@ -20,16 +23,15 @@
   justify-content: space-between;
   align-items: center;
 }
-// .SubcategoryWrapper {
-//   width: fit-content;
-//   background-color: $whiteColor;
-//   position: absolute;
-//   top: 0;
-//   left: 220px;
-// }
 .SubcategoryWrapper {
-  margin-left: 15px;
-  margin-top: 10px;
+  background-color: $whiteColor;
+  position: absolute;
+  top: 0;
+  left: 217px;
+  width: 175px;
+  height: fit-content;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 .SubcategoryName {
   font-family: $primaryFontFamily;
@@ -37,6 +39,10 @@
   font-weight: 400;
   color: $primaryColor;
   cursor: pointer;
+  padding: 5px 5px;
+}
+.SubcategoryName.hovered {
+  background-color: #d9d9d9;
 }
 .Arrow {
   cursor: pointer;
