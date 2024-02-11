@@ -1,0 +1,26 @@
+@import "@/app/styles/variables.scss";
+
+.SelectWrapper {
+  width: fit-content;
+  height: 24px;
+  background-color: black;
+}
+select {
+  //   appearance: none;
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #000000;
+  background-color: #000000;
+  color: #ffffff;
+  cursor: pointer;
+}
+select option {
+  font-family: $primaryFontFamily;
+  font-size: 14px;
+  font-weight: 400;
+  color: $whiteTextColor;
+  background-color: #000000;
+}
+select option:active {
+  background-color: transparent;
+}

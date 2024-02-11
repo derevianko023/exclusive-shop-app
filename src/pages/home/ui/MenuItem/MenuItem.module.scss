@@ -2,14 +2,14 @@
 
 .MenuItemWrapper {
   width: 217px;
+  height: 34px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
-.MenuItemWrapper:not(:last-child) {
-  margin-bottom: 15px;
-  margin-top: 10px;
-}
+
 .MenuItemWrapper.hovered {
-  background-color: #d9d9d9;
+  background-color: #FFE4E6;
 }
 
 .MenuItem {
@@ -42,7 +42,7 @@
   padding: 5px 5px;
 }
 .SubcategoryName.hovered {
-  background-color: #d9d9d9;
+  background-color: #FFE4E6;
 }
 .Arrow {
   cursor: pointer;

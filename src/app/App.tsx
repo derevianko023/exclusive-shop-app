@@ -21,6 +21,8 @@ import products from "@/enteties/product/ui/ProductList/products.json";
 
 import { Carousel } from "@/widgets/carousel";
 import { Menu } from "@/pages/home";
+import {UserProfileButton} from '@/enteties/user/ui/UserProfileButton/UserProfileButton';
+import {LanguageSwitch} from '@/features/languageSwitch';
 
 // interface Category {
 //   name: string;
@@ -34,7 +36,7 @@ const categories = [
   },
   {
     name: "Men's Fashion",
-    subcategories: ["Shoes", "Men's Accessories", "Coat"],
+    subcategories: ["Shoes", "Men's Accessories", "Coats"],
   },
   {
     name: "Electronics",
@@ -72,9 +74,12 @@ const App = () => {
     }
   }, [selectedOption]);
 
-  // const handleClick = () => {
-  //   console.log("Button clicked!");
-  // };
+  const handleClick = () => {
+    console.log("User Profile Button clicked!");
+  };
+  const handleClick2 = () => {
+    console.log("Select clicked!");
+  };
   // const handleRadioInputChange = (value: string) => {
   //   setSelectedOption(value);
   //   console.log(value);
@@ -92,9 +97,11 @@ const App = () => {
   // };
   return (
     <div className={styles.App}>
-      <Carousel images={images} />
-      <ProductList data={products} />
+      <UserProfileButton onClick={handleClick}/>
+      <LanguageSwitch onChange={handleClick2} />
+      {/* <Carousel images={images} />
       <Menu categories={categories} />
+      <ProductList data={products} /> */}
 
       {/* <Button disabled={false} backgroundColor="green" size="large">
         Buy Now!

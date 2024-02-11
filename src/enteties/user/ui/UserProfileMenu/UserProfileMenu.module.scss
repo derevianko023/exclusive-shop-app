@@ -1,0 +1,37 @@
+@import "@/app/styles/variables.scss";
+
+.UserProfileMenu {
+  width: 225px;
+  height: 208px;
+  background: linear-gradient(
+    to bottom right,
+    rgba(169, 169, 169, 0.9),
+    rgba(0, 0, 0, 0.9)
+  );
+  border-radius: 4px;
+  padding: 18px;
+  position: absolute;
+  top: 37px;
+  left: -193px;
+  z-index: 1;
+}
+.MenuItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+.MenuItem:not(:last-child) {
+  margin-bottom: 15px;
+}
+.Icon {
+  margin-right: 20px;
+  height: 24px;
+  width: 24px;
+}
+.MenuItemText {
+  font-family: $primaryFontFamily;
+  font-size: 14px;
+  font-weight: 400;
+  color: $whiteTextColor;
+}

@@ -13,7 +13,9 @@ interface MenuItemProps {
 export const MenuItem: FC<MenuItemProps> = ({ name, subcategories }) => {
 
   const [isOpenSubcategories, setIsOpenSubcategories] = useState(false);
-  
+  const [hoveredSubcategoryIdx, setHoveredSubcategoryIdx] = useState(-1);
+
+
 
   const setCategoryFilter = () => {
     console.log("category click");
@@ -28,12 +30,19 @@ export const MenuItem: FC<MenuItemProps> = ({ name, subcategories }) => {
   const handleOnMouseLeave = () => {
     setIsOpenSubcategories(false);
   };
+  const handleOnMouseEnterSub = (index: number) => {
+    setHoveredSubcategoryIdx(index);
+  };
+  const handleOnMouseLeaveSub = () => {
+    setHoveredSubcategoryIdx(-1);
+  };
+
 
   return (
-    <div 
-    className={`${styles.MenuItemWrapper} ${isOpenSubcategories ? styles.hovered : ''}`}
-    onMouseEnter={handleOnMouseEnter}
-    onMouseLeave={handleOnMouseLeave}>
+    <div
+      className={`${styles.MenuItemWrapper} ${isOpenSubcategories ? styles.hovered : ''}`}
+      onMouseEnter={handleOnMouseEnter}
+      onMouseLeave={handleOnMouseLeave}>
       <li className={styles.MenuItem} onClick={setCategoryFilter}>
         <p className={styles.CategoryName}>{name}</p>
         {subcategories && (
@@ -42,10 +51,11 @@ export const MenuItem: FC<MenuItemProps> = ({ name, subcategories }) => {
       </li>
       {subcategories && isOpenSubcategories && (
         <ul className={styles.SubcategoryWrapper}>
-          {subcategories.map((subcategory) => (
+          {subcategories.map((subcategory, index) => (
             <li
-              className={styles.SubcategoryName}
-              onMouseEnter={handleOnMouseEnter}
+              onMouseEnter={() => handleOnMouseEnterSub(index)}
+              onMouseLeave={handleOnMouseLeaveSub}
+              className={`${styles.SubcategoryName} ${hoveredSubcategoryIdx === index ? styles.hovered : ''}`}
               key={subcategory}
               onClick={setSubcategoryFilter}
             >
