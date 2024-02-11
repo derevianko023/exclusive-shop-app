@@ -6,7 +6,10 @@ import { useState, useEffect } from "react";
 // import SearchIcon from "@/shared/libs/assets/svg/searchIcon.svg?react";
 // import SendIcon from "@/shared/libs/assets/svg/sendIcon.svg?react";
 // import CartIcon from "@/shared/libs/assets/svg/cartIcon.svg?react";
+import CartIconBlack from "@/shared/libs/assets/svg/cartIconBlack.svg?react";
+// import HeartIcon from "@/shared/libs/assets/svg/heartIcon.svg?react";
 // import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
+import InstagramIcon from '@/shared/libs/assets/svg/instagramIcon.svg?react';
 // ui
 // import { Button } from "@/shared/ui/Button";
 // import { Input } from "@/shared/ui/Input";
@@ -14,15 +17,18 @@ import { useState, useEffect } from "react";
 // import { CustomCheckbox } from "@/shared/ui/CustomCheckbox";
 // import { CustomRadioInput } from "@/shared/ui/CustomRadioInput";
 // import { CustomCategoryTitle } from "@/shared/ui/CustomCategoryTitle";
-import { ProductList } from "@/enteties/product/ui/ProductList/ProductList";
+// import { ProductList } from "@/enteties/product/ui/ProductList/ProductList";
 
-import images from "@/widgets/carousel/libs/assets/images.json";
-import products from "@/enteties/product/ui/ProductList/products.json";
+// import images from "@/widgets/carousel/libs/assets/images.json";
+// import products from "@/enteties/product/ui/ProductList/products.json";
 
-import { Carousel } from "@/widgets/carousel";
-import { Menu } from "@/pages/home";
-import {UserProfileButton} from '@/enteties/user/ui/UserProfileButton/UserProfileButton';
-import {LanguageSwitch} from '@/features/languageSwitch';
+// import { Carousel } from "@/widgets/carousel";
+import { HomePage, Menu } from "@/pages/home";
+import { UserProfileButton } from '@/enteties/user/ui/UserProfileButton/UserProfileButton';
+import { LanguageSwitch } from '@/features/languageSwitch';
+import { IconButton } from '@/shared/ui/IconButton/IconButton';
+import { IconButtonWithCounter } from '@/shared/ui/IconButtonWithCounter/';
+import { Header } from '@/widgets/header/ui/Header/Header'
 
 // interface Category {
 //   name: string;
@@ -97,11 +103,15 @@ const App = () => {
   // };
   return (
     <div className={styles.App}>
-      <UserProfileButton onClick={handleClick}/>
-      <LanguageSwitch onChange={handleClick2} />
-      {/* <Carousel images={images} />
-      <Menu categories={categories} />
-      <ProductList data={products} /> */}
+      <HomePage />
+      {/* <Header/> */}
+      {/* <IconButton icon={<InstagramIcon />} onClick={handleClick} /> */}
+      {/* <IconButtonWithCounter icon={<CartIconBlack />} onClick={handleClick} counterNumber={4} /> */}
+      {/* <UserProfileButton onClick={handleClick} /> */}
+      {/* <LanguageSwitch onChange={handleClick2} /> */}
+      {/* <Carousel images={images} /> */}
+      {/* <Menu categories={categories} /> */}
+      {/* <ProductList data={products} /> */}
 
       {/* <Button disabled={false} backgroundColor="green" size="large">
         Buy Now!
