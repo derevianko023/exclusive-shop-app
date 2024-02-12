@@ -9,7 +9,7 @@ import { useState, useEffect } from "react";
 import CartIconBlack from "@/shared/libs/assets/svg/cartIconBlack.svg?react";
 // import HeartIcon from "@/shared/libs/assets/svg/heartIcon.svg?react";
 // import GoogleIcon from "@/shared/libs/assets/svg/googleIcon.svg?react";
-import InstagramIcon from '@/shared/libs/assets/svg/instagramIcon.svg?react';
+import InstagramIcon from "@/shared/libs/assets/svg/instagramIcon.svg?react";
 // ui
 // import { Button } from "@/shared/ui/Button";
 // import { Input } from "@/shared/ui/Input";
@@ -23,12 +23,12 @@ import InstagramIcon from '@/shared/libs/assets/svg/instagramIcon.svg?react';
 // import products from "@/enteties/product/ui/ProductList/products.json";
 
 // import { Carousel } from "@/widgets/carousel";
-import { HomePage, Menu } from "@/pages/home";
-import { UserProfileButton } from '@/enteties/user/ui/UserProfileButton/UserProfileButton';
-import { LanguageSwitch } from '@/features/languageSwitch';
-import { IconButton } from '@/shared/ui/IconButton/IconButton';
-import { IconButtonWithCounter } from '@/shared/ui/IconButtonWithCounter/';
-import { Header } from '@/widgets/header/ui/Header/Header'
+import { HomePage } from "@/pages/home";
+import { UserProfileButton } from "@/enteties/user/ui/UserProfileButton/UserProfileButton";
+import { LanguageSwitch } from "@/features/languageSwitch";
+import { IconButton } from "@/shared/ui/IconButton/IconButton";
+import { IconButtonWithCounter } from "@/shared/ui/IconButtonWithCounter/";
+import { Header } from "@/widgets/header/ui/Header/Header";
 
 // interface Category {
 //   name: string;
