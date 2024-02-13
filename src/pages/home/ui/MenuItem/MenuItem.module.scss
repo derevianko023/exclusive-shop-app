@@ -1,15 +1,15 @@
 @import "@/app/styles/variables.scss";
 
 .MenuItemWrapper {
-  width: 217px;
-  height: 34px;
+  width: 243px;
+  height: 40px;
   position: relative;
   display: flex;
   align-items: center;
 }
 
 .MenuItemWrapper.hovered {
-  background-color: #FFE4E6;
+  background-color: #E9EAEC;
 }
 
 .MenuItem {
@@ -18,7 +18,7 @@
   font-weight: 400;
   color: $primaryColor;
   cursor: pointer;
-  width: 217px;
+  width: 243px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -27,7 +27,7 @@
   background-color: $whiteColor;
   position: absolute;
   top: 0;
-  left: 217px;
+  left: 243px;
   width: 175px;
   height: fit-content;
   border-radius: 5px;
@@ -41,10 +41,12 @@
   color: $primaryColor;
   cursor: pointer;
   padding: 5px 5px;
+  height: 40px;
 }
 .SubcategoryName.hovered {
-  background-color: #FFE4E6;
+  background-color: #E9EAEC;
 }
 .Arrow {
   cursor: pointer;
+  margin-right: 15px;
 }

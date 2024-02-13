@@ -13,10 +13,11 @@ import CartIconBlack from "@/shared/libs/assets/svg/cartIconBlack.svg?react";
 import HeartIcon from "@/shared/libs/assets/svg/heartIcon.svg?react";
 import { UserProfileButton } from "@/enteties/user/ui/UserProfileButton/UserProfileButton";
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { Logo } from "@/shared/ui/Logo/Logo";
 
-interface HeaderProps {}
+interface HeaderProps { }
 
-export const Header: FC<HeaderProps> = ({}) => {
+export const Header: FC<HeaderProps> = ({ }) => {
   const [isLogin, setIsLogin] = useState(true);
 
   const handleInputChange = () => {
@@ -35,7 +36,8 @@ export const Header: FC<HeaderProps> = ({}) => {
     <div className={styles.Header}>
       <HeaderLine headerText="Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!" />
       <div className={styles.InnerContent}>
-        <p className={styles.LogoText}>Exclusive</p>
+        
+        <Logo color="black" />
 
         <HeaderNavigation />
 
@@ -62,6 +64,7 @@ export const Header: FC<HeaderProps> = ({}) => {
           />
           {isLogin && <UserProfileButton onClick={handleClick} />}
         </div>
+
       </div>
     </div>
   );

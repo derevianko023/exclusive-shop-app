@@ -54,7 +54,7 @@ return (
 <div className={styles.HomePageContent}>
 <Menu categories={categories} />
 <Carousel images={images} />
-<CustomCategoryTitle title="Today's" />
+<CustomCategoryTitle title="Our Products" />
 <ProductList data={products} />
 </div>
 

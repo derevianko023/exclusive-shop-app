@@ -2,6 +2,7 @@
 import { FC, ReactNode } from "react";
 // styles
 import styles from "./IconButtonWithCounter.module.scss";
+import { IconButton } from "../IconButton/IconButton";
 
 interface IconButtonWithCounterProps {
   icon: ReactNode;
@@ -9,19 +10,16 @@ interface IconButtonWithCounterProps {
   counterNumber?: number;
 }
 
-export const IconButtonWithCounter: FC<IconButtonWithCounterProps> = ({
-  icon,
-  onClick,
-  counterNumber,
+export const IconButtonWithCounter: FC<IconButtonWithCounterProps> = ({ icon, onClick, counterNumber
 }) => {
   return (
-    <button className={styles.IconButtonWithCounter} onClick={onClick}>
-      <div className={styles.Icon}>{icon}</div>
+    <div className={styles.IconButtonWithCounter}>
+      <IconButton icon={icon} onClick={onClick} size="large" />
       {counterNumber && (
         <div className={styles.CounterNumberWrapper}>
           <p className={styles.CounterNumber}>{counterNumber}</p>
         </div>
       )}
-    </button>
+    </div>
   );
 };

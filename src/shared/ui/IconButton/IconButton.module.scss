@@ -1,13 +1,19 @@
 @import "@/app/styles/variables.scss";
 
 .IconButton {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    padding: 0;
-    cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+.IconButton.small {
+  width: 20px;
+  height: 20px;
+}
+.IconButton.large {
+  width: 32px;
+  height: 32px;
 }
 .Icon {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
