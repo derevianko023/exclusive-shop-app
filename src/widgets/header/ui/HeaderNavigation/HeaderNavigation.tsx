@@ -13,6 +13,7 @@ export const HeaderNavigation: FC<HeaderNavigationProps> = ({}) => {
     <nav className={styles.Navigation}>
       {headerNavItems.map((item) => (
         <ReactNavLink
+          key={item.text}
           to={item.to}
           className={({ isActive }) =>
             [styles.item, isActive ? styles.activeItem : ""].join(" ")
