@@ -1,0 +1,16 @@
+@import "@/app/styles/variables.scss";
+
+.CustomTitleWrapper {
+    height: 48px;
+    width: fit-content;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 50px;
+    .TitleText {
+        font-family: $secondaryFontFamily;
+        font-weight: 600;
+        font-size: 36px;
+        color: $primaryTextColor;
+    }
+}

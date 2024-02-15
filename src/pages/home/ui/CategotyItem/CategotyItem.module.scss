@@ -1,0 +1,31 @@
+@import "@/app/styles/variables.scss";
+
+.CategotyItem {
+  width: 170px;
+  height: 145px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid #b3b3b3;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: background-color 0.8s;
+  transition: border 0.8s;
+  &:hover {
+    background-color: $secondaryColor;
+    border: 1px solid $secondaryColor;
+  }
+    .CategoryIcon {
+      width: 56px;
+      height: 56px;
+    }
+    .CategoryText {
+      font-family: $primaryFontFamily;
+      font-size: $primaryFontSize;
+      color: $primaryTextColor;
+      font-weight: 400;
+    }
+  }
