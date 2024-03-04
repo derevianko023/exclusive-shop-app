@@ -1,0 +1,12 @@
+@import "@/app/styles/variables.scss";
+
+.ServiceList {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+  column-gap: 30px;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}

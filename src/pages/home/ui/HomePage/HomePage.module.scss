@@ -7,10 +7,29 @@
   flex-wrap: wrap;
   justify-content: space-between;
   position: relative;
-  .CategoryWrapper {
-    width: 100%;
-  }
+  .CategoryWrapper,
   .ProductWrapper {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0 100px;
+  }
+  .TitlesWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 25px;
+  }
+  .ServicesWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 50px;
   }
 }

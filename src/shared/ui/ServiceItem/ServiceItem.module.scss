@@ -1,0 +1,27 @@
+@import "@/app/styles/variables.scss";
+
+.ServiceItem {
+  width: fit-content;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 5px;
+  .ServiceIcon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+  }
+  .ServiceTitle {
+    font-family: $primaryFontFamily;
+    font-size: 20px;
+    font-weight: 600;
+    color: $primaryTextColor;
+  }
+  .ServiceDescription {
+    font-family: $primaryFontFamily;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}

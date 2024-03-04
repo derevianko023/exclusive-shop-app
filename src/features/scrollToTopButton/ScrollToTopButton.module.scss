@@ -1,0 +1,13 @@
+.scrollToTop {
+  display: none;
+  position: fixed;
+  width: 46px;
+  height: 46px;
+  bottom: 50px;
+  right: 125px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+  &.visible {
+    display: block;
+  }
+}

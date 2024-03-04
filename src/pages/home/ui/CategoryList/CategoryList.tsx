@@ -1,5 +1,5 @@
 // react
-import { FC, ReactNode } from 'react'
+import { FC, ReactNode, useState } from 'react'
 // styles
 import styles from './CategoryList.module.scss'
 //pages/components
@@ -28,13 +28,28 @@ const categoryData: CategoryList[] = [
 ]
 
 export const CategoryList: FC<CategoryListProps> = ({ }) => {
+
+    const [activeCategory, setActiveCategory] = useState<string | null>(null);
+    console.log(activeCategory)
+
     const onHandleClick = (categoryText: string) => {
         console.log(`Clicked on category: ${categoryText}`);
+        if (activeCategory === categoryText) {
+            setActiveCategory(null);
+        } else {
+            setActiveCategory(categoryText);
+        }
     };
     return (
         <ul className={styles.CategoryList}>
             {categoryData.map((category) =>
-                <CategotyItem icon={category.icon} text={category.text} onClick={() => onHandleClick(category.text)} />
+                <CategotyItem
+                    key={category.text}
+                    icon={category.icon}
+                    text={category.text}
+                    onClick={() => onHandleClick(category.text)}
+                    isActive={activeCategory === category.text}
+                />
             )}
         </ul>
     )

@@ -1,10 +1,23 @@
 @import "@/app/styles/variables.scss";
 
 .CategoryList {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    // gap: 20px;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(6, 1fr);
+  row-gap: 30px;
+  column-gap: 30px;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 620px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

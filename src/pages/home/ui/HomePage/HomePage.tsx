@@ -13,6 +13,9 @@ import products from "@/enteties/product/ui/ProductList/products.json";
 import { CustomCategoryTitle } from '@/shared/ui/CustomCategoryTitle/CustomCategoryTitle';
 import { CategoryList } from '../CategoryList/CategoryList';
 import { CustomTitle } from '@/shared/ui/CustomTitle/CustomTitle';
+import { Button } from '@/shared/ui/Button/Button';
+//ui
+import { ServiceList } from '@/shared/ui/ServiceList/ServiceList';
 
 interface HomePageProps {
 
@@ -50,6 +53,10 @@ const categories = [
 ];
 
 export const HomePage: FC<HomePageProps> = ({ }) => {
+  const handleClick = () => {
+    console.log("View All Products")
+
+  }
   return (
     <div className={styles.HomePage}>
       <Header />
@@ -58,19 +65,32 @@ export const HomePage: FC<HomePageProps> = ({ }) => {
         <Carousel images={images} />
 
         <div className={styles.CategoryWrapper}>
-          <CustomCategoryTitle title="Categories" />
-          <CustomTitle title="Browse By Category" />
+          <div className={styles.TitlesWrapper}>
+            <CustomCategoryTitle title="Categories" />
+            <CustomTitle title="Browse By Category" />
+          </div>
           <CategoryList />
         </div>
 
         <div className={styles.ProductWrapper}>
-          <CustomCategoryTitle title="Our Products" />
-          <CustomTitle title="Explore Our Products" />
+          <div className={styles.TitlesWrapper}>
+            <CustomCategoryTitle title="Our Products" />
+            <CustomTitle title="Explore Our Products" />
+          </div>
           <ProductList data={products} />
+          <Button
+            onClick={handleClick}
+            disabled={false}
+            backgroundColor="rose"
+            size="large">
+            View All Products
+          </Button>
         </div>
 
+        <div className={styles.ServicesWrapper}>
+          <ServiceList />
+        </div>
       </div>
-
     </div>
   )
 }

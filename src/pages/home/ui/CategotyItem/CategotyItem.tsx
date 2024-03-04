@@ -7,20 +7,26 @@ interface CategotyItemProps {
     icon: ReactNode;
     text: string;
     onClick: () => void;
+    isActive: boolean;
 }
 
-export const CategotyItem: FC<CategotyItemProps> = ({ icon, text, onClick }) => {
+export const CategotyItem: FC<CategotyItemProps> = ({ icon, text, onClick, isActive }) => {
 
-    const [isClicked, setIsClicked] = useState(false);
+    const [isHovered, setIsHovered] = useState(false);
 
-    const handleClick = () => {
-        onClick();
-        setIsClicked(true);
-    };
+
+    const handleOnMouseEnter = () => {
+        setIsHovered(true)
+    }
+    const handleOnMouseLeave = () => {
+        setIsHovered(false)
+    }
     return (
         <div
-            className={`${styles.CategotyItem} ${isClicked ? styles.clicked : ''}`}
-            onClick={handleClick}>
+            className={`${styles.CategotyItem} ${isActive ? styles.clicked : ''} ${isHovered ? styles.hovered : ''}`}
+            onClick={onClick}
+            onMouseEnter={handleOnMouseEnter}
+            onMouseLeave={handleOnMouseLeave}>
             <div className={styles.CategoryIcon}>{icon}</div>
             <p className={styles.CategoryText}>{text}</p>
         </div>

@@ -11,21 +11,35 @@
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #fff;
+  background-color: $whiteColor;
   transition: background-color 0.8s;
   transition: border 0.8s;
+  &.clicked,
+  &.hovered {
+    background-color: $secondaryColor;
+    border: 1px solid $secondaryColor;
+    svg g path {
+      stroke: $whiteColor;
+    }
+    svg g line {
+      stroke: $whiteColor;
+    }
+    .CategoryText {
+      color: $whiteColor;
+    }
+  }
   &:hover {
     background-color: $secondaryColor;
     border: 1px solid $secondaryColor;
   }
-    .CategoryIcon {
-      width: 56px;
-      height: 56px;
-    }
-    .CategoryText {
-      font-family: $primaryFontFamily;
-      font-size: $primaryFontSize;
-      color: $primaryTextColor;
-      font-weight: 400;
-    }
+  .CategoryIcon {
+    width: 56px;
+    height: 56px;
   }
+  .CategoryText {
+    font-family: $primaryFontFamily;
+    font-size: $primaryFontSize;
+    color: $primaryTextColor;
+    font-weight: 400;
+  }
+}

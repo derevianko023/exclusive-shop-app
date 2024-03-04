@@ -29,6 +29,7 @@ import { LanguageSwitch } from "@/features/languageSwitch";
 import { IconButton } from "@/shared/ui/IconButton/IconButton";
 import { IconButtonWithCounter } from "@/shared/ui/IconButtonWithCounter/";
 import { Header } from "@/widgets/header/ui/Header/Header";
+import { ScrollToTopButton } from "@/features/scrollToTopButton";
 
 // interface Category {
 //   name: string;
@@ -104,6 +105,7 @@ const App = () => {
   return (
     <div className={styles.App}>
       <HomePage />
+      <ScrollToTopButton />
       {/* <Header/> */}
       {/* <IconButton icon={<InstagramIcon />} onClick={handleClick} /> */}
       {/* <IconButtonWithCounter icon={<CartIconBlack />} onClick={handleClick} counterNumber={4} /> */}
